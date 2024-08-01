@@ -26,6 +26,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import net.minecraft.client.Camera;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.LevelRenderer;
@@ -46,8 +47,7 @@ import io.vram.frex.api.renderloop.BlockOutlineListener.BlockOutlineContext;
 public class WorldRenderContextBase implements BlockOutlineContext, WorldRenderContext {
 	private LevelRenderer worldRenderer;
 	private PoseStack poseStack;
-	private float tickDelta;
-	private long limitTime;
+	private DeltaTracker deltaTracker;
 	private boolean blockOutlines;
 	private Camera camera;
 	private Frustum frustum;
@@ -71,8 +71,7 @@ public class WorldRenderContextBase implements BlockOutlineContext, WorldRenderC
 
 	public void prepare(
 			LevelRenderer worldRenderer,
-			float tickDelta,
-			long limitTime,
+			DeltaTracker deltaTracker,
 			boolean blockOutlines,
 			Camera camera,
 			GameRenderer gameRenderer,
@@ -85,8 +84,7 @@ public class WorldRenderContextBase implements BlockOutlineContext, WorldRenderC
 			ClientLevel world
 	) {
 		this.worldRenderer = worldRenderer;
-		this.tickDelta = tickDelta;
-		this.limitTime = limitTime;
+		this.deltaTracker = deltaTracker;
 		this.blockOutlines = blockOutlines;
 		this.camera = camera;
 		this.gameRenderer = gameRenderer;
@@ -139,13 +137,8 @@ public class WorldRenderContextBase implements BlockOutlineContext, WorldRenderC
 	}
 
 	@Override
-	public float tickDelta() {
-		return tickDelta;
-	}
-
-	@Override
-	public long limitTime() {
-		return limitTime;
+	public DeltaTracker deltaTracker() {
+		return deltaTracker;
 	}
 
 	@Override

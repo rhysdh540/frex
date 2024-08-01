@@ -68,7 +68,7 @@ public class FrexMod implements ClientModInitializer {
 
 	private final SimpleSynchronousResourceReloadListener modelTextureListener = new SimpleSynchronousResourceReloadListener() {
 		private final List<ResourceLocation> deps = ImmutableList.of(ResourceReloadListenerKeys.MODELS, ResourceReloadListenerKeys.TEXTURES);
-		private final ResourceLocation id = new ResourceLocation("frex:models_and_textures");
+		private final ResourceLocation id = ResourceLocation.parse("frex:models_and_textures");
 
 		@Override
 		public ResourceLocation getFabricId() {
@@ -88,7 +88,7 @@ public class FrexMod implements ClientModInitializer {
 
 	private final SimpleSynchronousResourceReloadListener lightListener = new SimpleSynchronousResourceReloadListener() {
 		private final List<ResourceLocation> deps = ImmutableList.of();
-		private final ResourceLocation id = new ResourceLocation("frex:general");
+		private final ResourceLocation id = ResourceLocation.parse("frex:general");
 
 		@Override
 		public ResourceLocation getFabricId() {

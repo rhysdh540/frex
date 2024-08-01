@@ -22,6 +22,7 @@ package io.vram.frex.fabric.mixin.events;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import org.joml.Matrix4f;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -34,6 +35,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
 import net.minecraft.client.Camera;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
@@ -62,19 +64,21 @@ import io.vram.frex.api.renderloop.WorldRenderStartListener;
 // Only loaded when Fabric API is not present
 @Mixin(LevelRenderer.class)
 public class MixinLevelRendererEvents {
-	@Shadow private RenderBuffers renderBuffers;
+	@Shadow @Final private RenderBuffers renderBuffers;
 	@Shadow private ClientLevel level;
 	@Shadow private PostChain transparencyChain;
-	@Shadow private Minecraft minecraft;
+	@Shadow @Final private Minecraft minecraft;
 
 	@Unique private final WorldRenderContextBase context = new WorldRenderContextBase();
 
 	@Inject(method = "renderLevel", at = @At("HEAD"))
-	private void beforeRenderLevel(float tickDelta, long limitTime, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture, Matrix4f modelViewMatrix, Matrix4f projectionMatrix, CallbackInfo ci) {
+	private void beforeRenderLevel(
+			DeltaTracker deltaTracker, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture,
+			Matrix4f modelViewMatrix, Matrix4f projectionMatrix, CallbackInfo ci) {
+
 		context.prepare(
 				(LevelRenderer) (Object) this,
-				tickDelta,
-				limitTime,
+				deltaTracker,
 				renderBlockOutline,
 				camera,
 				gameRenderer,

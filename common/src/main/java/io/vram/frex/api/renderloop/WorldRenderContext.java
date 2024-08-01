@@ -26,6 +26,7 @@ import org.joml.Matrix4f;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.minecraft.client.Camera;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.LevelRenderer;
@@ -48,9 +49,7 @@ public interface WorldRenderContext {
 
 	PoseStack poseStack();
 
-	float tickDelta();
-
-	long limitTime();
+	DeltaTracker deltaTracker();
 
 	boolean blockOutlines();
 

@@ -39,7 +39,7 @@ accessible   field   net/minecraft/client/renderer/RenderStateShard   DEFAULT_LI
 accessible   field   net/minecraft/client/renderer/RenderStateShard   NO_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_COLOR_LIGHTMAP_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_COLOR_TEX_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
+#accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_COLOR_TEX_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_TEX_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_COLOR_TEX_LIGHTMAP_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   POSITION_COLOR_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
@@ -67,11 +67,11 @@ accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_LEASH_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_WATER_MASK_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_OUTLINE_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_ARMOR_GLINT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
+#accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_ARMOR_GLINT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_ARMOR_ENTITY_GLINT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_GLINT_TRANSLUCENT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_GLINT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
-accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_GLINT_DIRECT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
+#accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_GLINT_DIRECT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_ENTITY_GLINT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_ENTITY_GLINT_DIRECT_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
 accessible   field   net/minecraft/client/renderer/RenderStateShard   RENDERTYPE_CRUMBLING_SHADER   Lnet/minecraft/client/renderer/RenderStateShard$ShaderStateShard;
@@ -145,4 +145,4 @@ accessible field net/minecraft/client/renderer/entity/ItemRenderer blockEntityRe
 accessible class net/minecraft/client/renderer/chunk/RenderChunk
 accessible class net/minecraft/client/renderer/chunk/RenderRegionCache$ChunkInfo
 accessible class net/minecraft/client/renderer/chunk/SectionRenderDispatcher$RenderSection$RebuildTask
-accessible class net/minecraft/client/renderer/chunk/SectionRenderDispatcher$RenderSection$RebuildTask$CompileResults
+#accessible class net/minecraft/client/renderer/chunk/SectionRenderDispatcher$RenderSection$RebuildTask$CompileResults
