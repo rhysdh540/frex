@@ -69,7 +69,7 @@ public abstract class MixinRenderChunkRegion implements RenderChunkRegionExt {
 	private static final ThreadLocal<ChunkRenderConditionContext> TRANSFER_POOL = ThreadLocal.withInitial(ChunkRenderConditionContext::new);
 
 	@Inject(method = "<init>", at = @At("RETURN"))
-	public void onNew(Level level, int cxOff, int czOff, RenderChunk[][] renderChunks, CallbackInfo ci) {
+	public void onNew(Level level, int cxOff, int czOff, RenderChunk[] renderChunks, CallbackInfo ci) {
 		brightnessCache.defaultReturnValue(Integer.MAX_VALUE);
 		aoLevelCache.defaultReturnValue(Integer.MAX_VALUE);
 		// capture our predicate search results while still on the same thread - will happen right after the hook above

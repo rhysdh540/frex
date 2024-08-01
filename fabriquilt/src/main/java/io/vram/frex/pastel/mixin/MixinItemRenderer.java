@@ -20,6 +20,7 @@
 
 package io.vram.frex.pastel.mixin;
 
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,7 +40,7 @@ import io.vram.frex.pastel.PastelItemRenderContext;
 
 @Mixin(ItemRenderer.class)
 public class MixinItemRenderer {
-	@Shadow private ItemModelShaper itemModelShaper;
+	@Shadow @Final private ItemModelShaper itemModelShaper;
 
 	@Inject(at = @At("HEAD"), method = "render", cancellable = true)
 	public void onRender(ItemStack stack, ItemDisplayContext renderMode, boolean leftHanded, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay, BakedModel model, CallbackInfo ci) {
